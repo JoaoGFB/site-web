@@ -14,23 +14,14 @@
             width: 300px;
             height: 250px;
         }
-        #itens {
-            width: 100px; /* Largura do menu */
-            display: none; /* Inicialmente oculto */
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            background-color: lightgray;
-            color: #fff;
-            padding: 20px;
-        }
 
-        #menu {
-            display: inline-block;
-            width: 150px;
-            height: max-content;
-            margin: auto;
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%; /* Define a largura do main */
+            max-width: 1400px; /* Define a largura máxima */
+            margin: 0 auto; /* Centraliza o main na página */
         }
 
         h1 {
@@ -47,6 +38,8 @@
             text-decoration: underline;
             color: rgb(73, 73, 73);
         }
+
+        
     </style>
 </head>
 <body onresize="mudaTamanho()">
@@ -82,16 +75,25 @@
                 <a href="res-vintemil.html"><img src="imagens/20-000-leguas-submarinas.jpg" alt="rev-bichos" width="250px" height="150"></a>
             </article>
         </span>
+        <span class="span-livro">
+            <article>
+                <h3><a href="metamorfose.html">A Metamorfose - Franz Kafka</a></h3>
+                <br>
+                <a href="metamorfose.html"><img src="imagens/metamorfose-img.jpg" alt="metamorfose" width="250px" height="150px"></a>
+            </article>
+        </span>
+        <span class="span-livro">
+            <article>
+                <h3><a href="petitprincip.html">O Pequeno Príncipe - Antoine de Saint-Exupéry</a></h3>
+                <a href="petitprincip.html"><img src="imagens/petit-prince.webp" alt="pequeno-principe" width="250px" height="150px"></a>
+            </article>
+        </span>
+        <span class="span-livro">
+            <h3><a href="hobbit.html">O Hobbit - J. R. R. Tolkien</a></h3>
+            <a href="hobbit.html"><img src="imagens/hobbit.jpg" alt="hobbit" width="250px" height="150px"></a>
+        </span>
     </main>
     <script>
-        function mudaTamanho() {
-            if (window.innerWidth >= 992) {
-                itens.style.display = 'block'
-            } else {
-            itens.style.display = 'none'
-            }
-        }
-
         function clickMenu() {
             if (itens.style.display == 'block') {
                 itens.style.display = 'none'
