@@ -15,6 +15,10 @@
             height: 250px;
         }
 
+        #burger, #menu {
+            position: fixed; /* Fixa o cabeçalho */
+        }
+
         main {
             display: flex;
             flex-wrap: wrap;
@@ -39,7 +43,22 @@
             color: rgb(73, 73, 73);
         }
 
-        
+        .back-button {
+            background-color: rgb(160, 160, 160);
+            color: black;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 20px 0; /* Espaçamento acima e abaixo do botão */
+        }
+        .fixa {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body onresize="mudaTamanho()">
@@ -93,6 +112,9 @@
             <a href="hobbit.html"><img src="imagens/hobbit.jpg" alt="hobbit" width="250px" height="150px"></a>
         </span>
     </main>
+    <div class="fixa">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+    </div>
     <script>
         function clickMenu() {
             if (itens.style.display == 'block') {
@@ -100,6 +122,10 @@
             } else {
                     itens.style.display = 'block'
             }
+        }
+
+        function goBack() {
+            window.history.back();
         }
     </script> 
 </body>

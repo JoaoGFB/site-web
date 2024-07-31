@@ -27,6 +27,22 @@
         a:hover {
             color: rgb(73, 73, 73);
         }
+        .back-button {
+            background-color: rgb(160, 160, 160);
+            color: black;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 20px 0; /* Espaçamento acima e abaixo do botão */
+        }
+        .fixa {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
@@ -41,5 +57,13 @@
     <h3>Dowload</h3>
     <p><a href="pdfs/o_pequeno_principe_-_antoine_de_saint-exupery.pdf" download="O_Pequeno_Principe" type="application/pdf" target="_blank">Clique aqui para ler e fazer download!</a></p>
     </main>
+    <div class="fixa">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 </html>

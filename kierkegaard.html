@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kierkegaard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        p {
+            text-indent: 30px;
+        }
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color:  rgb(223, 223, 223);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+        }
+        .frases {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #ddd;
+            background-color:  rgb(206, 206, 206);
+            border-radius: 7px;
+            padding: 4px;
+        }
+        .frases p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+        #img {
+            text-align: center;
+        }
+        .back-button {
+            background-color: rgb(160, 160, 160);
+            color: black;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 20px 0; /* Espaçamento acima e abaixo do botão */
+        }
+        .fixa {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soren Kierkegaard</h1>
+    <main>
+        <div id="img">
+            <img src="imagens/kierkegaard.png" width="300px" height="250px" alt="newton">
+        </div>
+        <p>Søren Kierkegaard foi um filósofo e teólogo dinamarquês, nascido em 1813 e falecido em 1855. 
+            Ele é considerado o pai do existencialismo, uma corrente filosófica que explora a experiência individual e a liberdade de escolha. 
+            Kierkegaard focou em temas como angústia, desespero e a busca por uma fé cristã autêntica. 
+            Suas obras mais conhecidas incluem “Ou Isto ou Aquilo” e “Temor e Tremor”. 
+            Ele influenciou muitos pensadores posteriores, como Jean-Paul Sartre e Martin Heidegger.
+        </p>
+        <br>
+        <h2 style="text-align: center;">Frases de Soren Kierkegaard</h2>
+        <br>
+        <div class="frases">
+            <p>"A vida só pode ser compreendida olhando-se para trás, mas só pode ser vivida olhando-se para a frente."</p>
+        </div>
+        <div class="frases">
+            <p>"A angústia é a vertigem da liberdade."</p>
+        </div>
+        <div class="frases">
+            <p>"Ousar é perder o equilíbrio momentaneamente. Não ousar é perder-se."</p>
+        </div>
+        <div class="frases">
+            <p>"A fé é a mais elevada paixão de todos os homens."</p>
+        </div>
+        <div class="frases">
+            <p>"Devo encontrar uma verdade que seja verdade para mim."</p>
+        </div>
+    </main>
+    <div class="fixa">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

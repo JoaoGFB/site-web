@@ -19,7 +19,6 @@
             position: fixed; /* Fixa o cabeçalho */
         }
 
-
         main {
             max-width: 800px;
             margin: 2rem auto;
@@ -56,6 +55,22 @@
         .frases a:hover {
             text-decoration: underline;
             color: black;
+        }
+        .back-button {
+            background-color: rgb(160, 160, 160);
+            color: black;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 20px 0; /* Espaçamento acima e abaixo do botão */
+        }
+        .fixa {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 1000;
         }
     </style>
 </head>
@@ -100,6 +115,9 @@
             <a href="kierkegaard.html">Mais frases e infomações sobre Kierkegaard</a>
         </div>
     </main>
+    <div class="fixa">
+        <button class="back-button" onclick="goBack()">Voltar</button>
+    </div>
     <script>
         function clickMenu() {
             if (itens.style.display == 'block') {
@@ -107,6 +125,10 @@
             } else {
                     itens.style.display = 'block'
             }
+        }
+
+        function goBack() {
+            window.history.back();
         }
     </script> 
 </body>
