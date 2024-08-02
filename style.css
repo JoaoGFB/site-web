@@ -27,6 +27,9 @@ body, html {
     padding: 20px;
     box-shadow: 5px, 5px, 5px, rgba(0, 0, 0, 0.438);
 }
+#itens a:hover {
+    font-size: 1.05em;
+}
 
 #menu {
     display: inline-block;
@@ -54,7 +57,9 @@ h1 {
 #close:hover {
     cursor: pointer;
 }
-
+#voltar:hover {
+    transform: translateY(-2px)
+}
 a {
     text-decoration: none;
     color: black;
@@ -64,4 +69,51 @@ a {
 a:hover {
     text-decoration: underline;
     color: rgb(73, 73, 73);
+}
+.back-button {
+    background-color: rgb(160, 160, 160);
+    color: black;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 25px 0; /* Espaçamento acima e abaixo do botão */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Adiciona transições suaves */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+}
+.back-button:hover {
+    background-color: rgb(140, 140, 140); /* Muda a cor de fundo ao passar o mouse */
+    transform: translateY(-2px); /* Eleva ligeiramente o botão ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+}
+
+.back-button:active {
+    transform: translateY(0); /* Reseta a elevação ao clicar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reseta a sombra ao clicar */
+}
+
+.download {
+    display: inline-block;
+    background-color: rgb(160, 160, 160);
+    color: white;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.download:hover {
+    background-color: rgb(73, 73, 73);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.download:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

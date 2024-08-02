@@ -7,47 +7,102 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(206, 206, 206);
+        }
+
+        header {
+            width: 100%;
+            background-color: rgb(160, 160, 160);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        /* Estiliza a seção principal */
+        main {
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Altura total da tela */
+            width: 100%;
+            margin-top: 100px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        /* Estiliza os cartões */
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            overflow: hidden;
+            position: relative;
+            width: 300px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        /* Sobreposição de cor nas imagens */
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .card a {
+            position: relative;
+            z-index: 1;
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .card h3 {
             margin: 0;
         }
-        div {
-            display: inline-block;
-            background-color: lightgrey;
-            border: 1px solid black;
-            text-align: center;
-            height: 500px;
-            width: 300px;
-            margin: 30px;
-        }
-        #poemas {
-            text-align: center;
-        }
-        .tipo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            text-decoration: none;
-            color: black;
-        }
+
         #livros {
-            background-image: url(imagens/livros.png);
+            background-image: url('imagens/livros.png');
         }
+
         #poemas {
-            background-image: url(imagens/imagempoesia.jpg);
+            background-image: url('imagens/imagempoesia.jpg');
         }
+
         #frases {
-            background-image: url(imagens/frases.jpg);
+            background-image: url('imagens/frases.jpg');
         }
     </style>
 </head>
 <body>
-    <h1>Escolha um tipo de texto de sua preferência</h1>
-    <div id="livros"><a href="livros.html" class="tipo"><h3>Livros</h3></a></div>
-    <div id="poemas"><a href="poemas.html" class="tipo"><h3>Poemas</h3></a></div>
-    <div id="frases"><a href="frases.html" class="tipo"><h3>Frases</h3></a></div>
+    <header>
+        <h1>Escolha um tipo de texto de sua preferência</h1>
+    </header>
+    <main>
+        <div id="livros" class="card"><a href="livros.html"><h3>Livros</h3></a></div>
+        <div id="poemas" class="card"><a href="poemas.html"><h3>Poemas</h3></a></div>
+        <div id="frases" class="card"><a href="frases.html"><h3>Frases</h3></a></div>
+    </main>
 </body>
 </html>

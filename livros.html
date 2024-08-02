@@ -9,11 +9,33 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .span-livro {
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin: 10px;
             width: 300px;
-            height: 250px;
         }
+        .span-livro h3 {
+            text-align: center;
+            height: 3em;
+            line-height: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 0;
+        }
+        .span-livro article {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            justify-content: space-between;
+        }
+        .span-livro img {
+            margin-top: auto;
+        }
+
 
         #burger, #menu {
             position: fixed; /* Fixa o cabeçalho */
@@ -51,7 +73,19 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 1rem;
-            margin: 20px 0; /* Espaçamento acima e abaixo do botão */
+            margin: 25px 0; /* Espaçamento acima e abaixo do botão */
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Adiciona transições suaves */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+        }
+        .back-button:hover {
+            background-color: rgb(140, 140, 140); /* Muda a cor de fundo ao passar o mouse */
+            transform: translateY(-2px); /* Eleva ligeiramente o botão ao passar o mouse */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+        }
+
+        .back-button:active {
+            transform: translateY(0); /* Reseta a elevação ao clicar */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reseta a sombra ao clicar */
         }
         .fixa {
             position: fixed;
@@ -97,7 +131,7 @@
         <span class="span-livro">
             <article>
                 <h3><a href="metamorfose.html">A Metamorfose - Franz Kafka</a></h3>
-                <br>
+
                 <a href="metamorfose.html"><img src="imagens/metamorfose-img.jpg" alt="metamorfose" width="250px" height="150px"></a>
             </article>
         </span>
@@ -112,7 +146,7 @@
             <a href="hobbit.html"><img src="imagens/hobbit.jpg" alt="hobbit" width="250px" height="150px"></a>
         </span>
     </main>
-    <div class="fixa">
+    <div id="voltar" class="fixa">
         <button class="back-button" onclick="goBack()">Voltar</button>
     </div>
     <script>
