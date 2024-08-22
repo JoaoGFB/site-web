@@ -36,7 +36,6 @@
             margin-top: auto;
         }
 
-
         #burger, #menu {
             position: fixed; /* Fixa o cabeçalho */
         }
@@ -93,9 +92,6 @@
             right: 10px;
             z-index: 1000;
         }
-        .linha {
-            max-width: 95vw;
-        }
     </style>
 </head>
 <body onresize="mudaTamanho()">
@@ -116,42 +112,65 @@
                 </ul>
             </menu>
         </span>
-        
+       
     </header>
     <main>
-        <div class="linha">
-            <span class="span-livro">
-                <article>
-                    <h3><a href="res-bichos.html">A revolução dos bichos - George Orwell</a></h3>
-                    <a href="res-bichos.html"><img src="../imagens/img-rev-bichos.webp" alt="rev-bichos" width="250px" height="150"></a>
-                </article>
-            </span>
-            <span class="span-livro">
-                <article>
-                    <h3><a href="res-vintemil.html">Vinte Mil Léguas Submarinas - Júlio Verne</a></h3>
-                    <a href="res-vintemil.html"><img src="../imagens/20-000-leguas-submarinas.jpg" alt="rev-bichos" width="250px" height="150"></a>
-                </article>
-            </span>
-            <span class="span-livro">
-                <article>
-                    <h3><a href="metamorfose.html">A Metamorfose - Franz Kafka</a></h3>
-    
-                    <a href="metamorfose.html"><img src="../imagens/metamorfose-img.jpg" alt="metamorfose" width="250px" height="150px"></a>
-                </article>
-            </span>
-            <span class="span-livro">
-                <article>
-                    <h3><a href="petitprincip.html">O Pequeno Príncipe - Antoine de Saint-Exupéry</a></h3>
-                    <a href="petitprincip.html"><img src="../imagens/petit-prince.webp" alt="pequeno-principe" width="250px" height="150px"></a>
-                </article>
-            </span>
-            <span class="span-livro">
-                <h3><a href="hobbit.html">O Hobbit - J. R. R. Tolkien</a></h3>
-                <a href="hobbit.html"><img src="../imagens/hobbit.jpg" alt="hobbit" width="250px" height="150px"></a>
-            </span>
-        </div>
-        
-        
+        <span class="span-livro">
+            <article>
+                <h3><a href="res-bichos.html">A revolução dos bichos - George Orwell</a></h3>
+                <a href="res-bichos.html"><img src="../imagens/img-rev-bichos.webp" alt="rev-bichos" width="250px" height="150"></a>
+            </article>
+        </span>
+        <span class="span-livro">
+            <article>
+                <h3><a href="res-vintemil.html">Vinte Mil Léguas Submarinas - Júlio Verne</a></h3>
+                <a href="res-vintemil.html"><img src="../imagens/20-000-leguas-submarinas.jpg" alt="rev-bichos" width="250px" height="150"></a>
+            </article>
+        </span>
+        <span class="span-livro">
+            <article>
+                <h3><a href="metamorfose.html">A Metamorfose - Franz Kafka</a></h3>
+                <a href="metamorfose.html"><img src="../imagens/metamorfose-img.jpg" alt="metamorfose" width="250px" height="150px"></a>
+            </article>
+        </span>
+        <span class="span-livro">
+            <article>
+                <h3><a href="petitprincip.html">O Pequeno Príncipe - Antoine de Saint-Exupéry</a></h3>
+                <a href="petitprincip.html"><img src="../imagens/petit-prince.webp" alt="pequeno-principe" width="250px" height="150px"></a>
+            </article>
+        </span>
+        <span class="span-livro">
+            <h3><a href="hobbit.html">O Hobbit - J. R. R. Tolkien</a></h3>
+            <a href="hobbit.html"><img src="../imagens/hobbit.jpg" alt="hobbit" width="250px" height="150px"></a>
+        </span>
+        <span class="span-livro">
+            <h3><a href="#">título do livro</a></h3>
+            <a href=""><img src="" alt=""></a>
+        </span>
+        <span class="span-livro">
+            <h3><a href="#">título do livro</a></h3>
+            <a href=""><img src="" alt=""></a>
+        </span>
+        <span class="span-livro">
+            <h3><a href="#">título do livro</a></h3>
+            <a href=""><img src="" alt=""></a>
+        </span>
+        <span class="span-livro">
+            <h3><a href="#">título do livro</a></h3>
+            <a href=""><img src="" alt=""></a>
+        </span>
+        <span class="span-livro">
+            <h3><a href="#">título do livro</a></h3>
+            <a href=""><img src="" alt=""></a>
+        </span>
+        <span class="span-livro">
+            <h3><a href="#">título do livro</a></h3>
+            <a href=""><img src="" alt=""></a>
+        </span>
+        <span class="span-livro">
+            <h3><a href="#">título do livro</a></h3>
+            <a href=""><img src="" alt=""></a>
+        </span>
     </main>
     <div id="voltar" class="fixa">
         <button class="back-button" onclick="goBack()">Voltar</button>
@@ -165,9 +184,10 @@
             }
         }
 
+
         function goBack() {
             window.history.back();
         }
-    </script> 
+    </script>
 </body>
 </html>
