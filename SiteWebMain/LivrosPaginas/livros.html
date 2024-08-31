@@ -12,8 +12,14 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 10px;
+            margin: 20px;
+            margin-right: 20px;
+            margin-left: 20px;
             width: 300px;
+            border-color: #3838387e;
+            border-style: solid;
+            border-radius: 7px;
+            background-color: rgba(238, 238, 238, 0.76);
         }
         .span-livro h3 {
             text-align: center;
@@ -33,25 +39,31 @@
             justify-content: space-between;
         }
         .span-livro img {
+            border-style: solid;
+            border-radius: 7px;
             margin-top: auto;
         }
+
 
         #burger, #menu {
             position: fixed; /* Fixa o cabeçalho */
         }
 
+
         main {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            width: 100vw; /* Define a largura do main */
-            max-width: 1400px; /* Define a largura máxima */
+            width: 90vw; /* Define a largura do main */
+            max-width: 1300px; /* Define a largura máxima */
             margin: 0 auto; /* Centraliza o main na página */
         }
+
 
         h1 {
             text-align: center;
         }
+
 
         a {
             text-decoration: none;
@@ -59,10 +71,12 @@
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
+
         a:hover {
             text-decoration: underline;
             color: rgb(73, 73, 73);
         }
+
 
         .back-button {
             background-color: rgb(160, 160, 160);
@@ -81,6 +95,7 @@
             transform: translateY(-2px); /* Eleva ligeiramente o botão ao passar o mouse */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
         }
+
 
         .back-button:active {
             transform: translateY(0); /* Reseta a elevação ao clicar */
@@ -183,6 +198,8 @@
                     itens.style.display = 'block'
             }
         }
+
+
 
 
         function goBack() {
