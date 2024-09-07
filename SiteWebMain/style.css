@@ -48,7 +48,8 @@ h1 {
     padding: 10px;
 }
 #burger {
-    margin-left: 15px;
+    margin-left: 17px;
+    margin-top: -3px;
 }
 #burger:hover {
     cursor: pointer;
