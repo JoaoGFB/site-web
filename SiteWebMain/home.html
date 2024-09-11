@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
     <link rel="shortcut icon" href="faviconSite.ico" type="image/x-icon">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -22,45 +28,47 @@
             background-color: rgb(160, 160, 160);
             color: white;
             text-align: center;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
             position: fixed;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-        /* Estiliza a seção principal */
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
         main {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             width: 100%;
-            margin-top: 100px;
+            margin-top: 120px;
             padding: 20px;
+            gap: 30px;
             box-sizing: border-box;
         }
-        /* Estiliza os cartões */
+
         .card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-            overflow: hidden;
             position: relative;
-            width: 300px;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            width: 280px;
+            height: 380px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             background-size: cover;
             background-position: center;
-            transition: transform 0.3s;
         }
 
         .card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
-        /* Sobreposição de cor nas imagens */
+
         .card::before {
             content: "";
             position: absolute;
@@ -68,15 +76,24 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.4);
         }
 
         .card a {
-            position: relative;
-            z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
             text-decoration: none;
             color: white;
+            padding: 20px;
             font-size: 1.5rem;
+            font-weight: 500;
+            z-index: 1;
         }
 
         .card h3 {
@@ -98,12 +115,25 @@
 </head>
 <body>
     <header>
-        <h1>Escolha um tipo de texto de sua preferência</h1>
+        <h1>Escolha seu tipo de leitura favorita</h1>
     </header>
+
     <main>
-        <div id="livros" class="card"><a href="LivrosPaginas/livros.html"><h3>Livros</h3></a></div>
-        <div id="poemas" class="card"><a href="PoemasPaginas/poemas.html"><h3>Poemas</h3></a></div>
-        <div id="frases" class="card"><a href="FrasesPaginas/frases.html"><h3>Frases</h3></a></div>
+        <div id="livros" class="card">
+            <a href="LivrosPaginas/livros.html">
+                <h3>Livros</h3>
+            </a>
+        </div>
+        <div id="poemas" class="card">
+            <a href="PoemasPaginas/poemas.html">
+                <h3>Poemas</h3>
+            </a>
+        </div>
+        <div id="frases" class="card">
+            <a href="FrasesPaginas/frases.html">
+                <h3>Frases</h3>
+            </a>
+        </div>
     </main>
 </body>
 </html>
