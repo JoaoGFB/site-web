@@ -22,6 +22,61 @@
         body {
             background-color: lightgray;
         }
+        html {
+            background-color: rgb(206, 206, 206);
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(206, 206, 206);
+        }
+        #burger {
+            position: fixed;
+            top: 30px;
+            left: 15px;
+            z-index: 1000;
+        }
+        #menu {
+            position: fixed;
+            top: 0;
+            left: -250px; 
+            width: 250px;
+            height: 100%;
+            background-color: rgb(160, 160, 160); 
+            transition: left 0.3s ease; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+            z-index: 999; 
+        }
+        #menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; 
+            margin-top: 50px; 
+        }
+        #menu li {
+            margin: 1rem 0;
+        }
+        #menu a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #menu a:hover {
+            text-decoration: underline;
+        }
+        #menu #close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 2rem;
+        }
         main {
             text-indent: 30px;
             max-width: 900px;
@@ -112,23 +167,21 @@
 </head>
 <body>
     <header>
-        <h1>A Revolução dos Bichos - George Orwell</h1>
-        <span id="burger" class="material-symbols-outlined" class="burger" onclick="clickMenu()">
+        <span id="burger" class="material-symbols-outlined" onclick="toggleMenu()">
             menu
         </span>
         <span id="menu">
-            <menu id="itens">
-                <ul type="none">
-                    <span id="close" class="material-symbols-outlined" class="close" onclick="clickMenu()">
-                        close
-                    </span>
-                    <li><a href="livros.html">Livros</a></li>
-                    <li><a href="../PoemasPaginas/poemas.html">Poemas</a></li>
-                    <li><a href="../FrasesPaginas/frases.html">Frases</a></li>
-                </ul>
-            </menu>
+            <span id="close" class="material-symbols-outlined" onclick="toggleMenu()">
+                close
+            </span>
+            <ul>
+                <li><a href="../LivrosPaginas/livros.html">Livros</a></li>
+                <li><a href="../PoemasPaginas/poemas.html">Poemas</a></li>
+                <li><a href="../FrasesPaginas/frases.html">Frases</a></li>
+            </ul>
         </span>
     </header>
+    <h1>A Revolução dos Bichos - George Orwell</h1>
     <main>
         <img src="../imagens/img-rev-bichos.webp" alt="rev-bichos">
     <p>
@@ -136,17 +189,21 @@
         No entanto, a revolução logo se transforma em uma ditadura liderada pelos porcos, que se tornam cada vez mais autoritários e corruptos.
         A obra critica tanto o totalitarismo quanto as distorções da revolução e do socialismo.
     </p>
-    <p style="text-indent: 0px;"><a href="../pdfs/a-revolucao-dos-bichos.pdf" download="a-revolucao-dos-bichos.pdf" type="application/pdf" target="_blank" class="download">Clique fazer download!</a></p>
+    <p style="text-indent: 0px;"><a href="../pdfs/a-revolucao-dos-bichos.pdf" download="a-revolucao-dos-bichos.pdf" type="application/pdf" target="_blank" class="download">Clique para fazer download!</a></p>
     </main>
     <div class="fixa">
         <button class="back-button" onclick="goBack()">Voltar</button>
     </div>
     <script>
-        function clickMenu() {
-            if (itens.style.display == 'block') {
-                itens.style.display = 'none'
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const burger = document.getElementById('burger');
+            if (menu.style.left === '0px') {
+                menu.style.left = '-250px';
+                burger.style.display = 'block';
             } else {
-                    itens.style.display = 'block'
+                menu.style.left = '0px';
+                burger.style.display = 'none';
             }
         }
         function goBack() {
