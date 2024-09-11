@@ -10,46 +10,67 @@
     <link rel="shortcut icon" href="../faviconSite.ico" type="image/x-icon">
     <style>
         html {
-            background-color: lightgray; 
-
+            background-color: rgb(206, 206, 206);
         }
         body {
-            background-color:lightgray;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(206, 206, 206);
         }
-        .back-button {
-            background-color: rgb(160, 160, 160);
-            color: black;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin: 20px 0; /* Espaçamento acima e abaixo do botão */
-        }
-        #burger, #menu {
-            position: fixed; /* Fixa o cabeçalho */
-        }
-        .fixa {
+        #burger {
             position: fixed;
-            bottom: 10px;
-            right: 10px;
+            top: 30px;
+            left: 15px;
             z-index: 1000;
         }
-
-
-       
-        h3 {
-            text-align: center;
+        #menu {
+            position: fixed;
+            top: 0;
+            left: -250px; 
+            width: 250px;
+            height: 100%;
+            background-color: rgb(160, 160, 160); 
+            transition: left 0.3s ease; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+            z-index: 999; 
         }
-
-
+        #menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; 
+            margin-top: 50px; 
+        }
+        #menu li {
+            margin: 1rem 0;
+        }
+        #menu a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #menu a:hover {
+            text-decoration: underline;
+        }
+        #menu #close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 2rem;
+        }
         main {
-            max-width: 800px;
+            max-width: 800px; 
             margin: 2rem auto;
             padding: 1rem;
-            background-color:  rgba(223, 223, 223, 0.377);
+            background-color: rgba(223, 223, 223, 0.377);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            border-radius: 6px;
         }
 
 
@@ -105,20 +126,26 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 1rem;
-            margin: 25px 0; /* Espaçamento acima e abaixo do botão */
-            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Adiciona transições suaves */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+            margin: 25px 0; 
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
         }
         .back-button:hover {
-            background-color: rgb(140, 140, 140); /* Muda a cor de fundo ao passar o mouse */
-            transform: translateY(-2px); /* Eleva ligeiramente o botão ao passar o mouse */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+            background-color: rgb(140, 140, 140); 
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
         }
 
 
         .back-button:active {
-            transform: translateY(0); /* Reseta a elevação ao clicar */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reseta a sombra ao clicar */
+            transform: translateY(0); 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        }
+        .fixa {
+            position: fixed;
+            bottom: 10px;
+            right: 10px; 
+            z-index: 1000;
         }
         h3 {
             padding: 7px;
@@ -126,6 +153,9 @@
         .poema-info {
             color: black;
             text-decoration: none;
+        }
+        .poema h3 {
+            text-align: center;
         }
         .poema-info p:hover {
             color: #666;
@@ -141,23 +171,21 @@
 </head>
 <body>
     <header>
-        <h1>Poemas</h1>
-        <span id="burger" class="material-symbols-outlined" class="burger" onclick="clickMenu()">
+        <span id="burger" class="material-symbols-outlined" onclick="toggleMenu()">
             menu
         </span>
         <span id="menu">
-            <menu id="itens">
-                <ul type="none">
-                    <span id="close" class="material-symbols-outlined" class="close" onclick="clickMenu()">
-                        close
-                    </span>
-                    <li><a href="../LivrosPaginas/livros.html">Livros</a></li>
-                    <li><a href="poemas.html">Poemas</a></li>
-                    <li><a href="../FrasesPaginas/frases.html">Frases</a></li>
-                </ul>
-            </menu>
+            <span id="close" class="material-symbols-outlined" onclick="toggleMenu()">
+                close
+            </span>
+            <ul>
+                <li><a href="../LivrosPaginas/livros.html">Livros</a></li>
+                <li><a href="../PoemasPaginas/poemas.html">Poemas</a></li>
+                <li><a href="../FrasesPaginas/frases.html">Frases</a></li>
+            </ul>
         </span>
     </header>
+    <h1>Poemas</h1>
     <main>
         <div class="poema">
             <h3>Canção do Exílio - Gonçalves Dias</h3>
@@ -287,15 +315,17 @@
         <button class="back-button" onclick="goBack()">Voltar</button>
     </div>
     <script>
-        function clickMenu() {
-            if (itens.style.display == 'block') {
-                itens.style.display = 'none'
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const burger = document.getElementById('burger');
+            if (menu.style.left === '0px') {
+                menu.style.left = '-250px';
+                burger.style.display = 'block';
             } else {
-                    itens.style.display = 'block'
+                menu.style.left = '0px';
+                burger.style.display = 'none';
             }
         }
-
-
         function goBack() {
             window.history.back();
         }

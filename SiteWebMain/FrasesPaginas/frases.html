@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frases</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="../style.css">
     <link rel="shortcut icon" href="../faviconSite.ico" type="image/x-icon">
     <style>
@@ -18,37 +17,75 @@
             padding: 0;
             background-color: rgb(206, 206, 206);
         }
-        #burger, #menu {
-            position: fixed; /* Fixa o cabeçalho */
+        #burger {
+            position: fixed;
+            top: 30px;
+            left: 15px;
+            z-index: 1000;
         }
-
+        #menu {
+            position: fixed;
+            top: 0;
+            left: -250px; 
+            width: 250px;
+            height: 100%;
+            background-color: rgb(160, 160, 160); 
+            transition: left 0.3s ease; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+            z-index: 999; 
+        }
+        #menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; 
+            margin-top: 50px; 
+        }
+        #menu li {
+            margin: 1rem 0;
+        }
+        #menu a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #menu a:hover {
+            text-decoration: underline;
+        }
+        #menu #close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 2rem;
+        }
         main {
-            max-width: 800px;
+            max-width: 800px; 
             margin: 2rem auto;
             padding: 1rem;
-            background-color:  rgba(223, 223, 223, 0.377);
+            background-color: rgba(223, 223, 223, 0.377);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 6px;
-            
         }
-
         .frases {
             margin-bottom: 2rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid #ddd;
-            background-color:  rgba(238, 238, 238, 0.76);
+            background-color: rgba(238, 238, 238, 0.76);
             border-radius: 7px;
             padding: 4px;
             border-color: #3838387e;
             border-style: solid;
         }
-
         .frases p {
             font-size: 1.2rem;
             line-height: 1.5;
             margin: 0;
         }
-
         .frases a {
             display: block;
             margin-top: 0.5rem;
@@ -56,7 +93,6 @@
             text-decoration: none;
             font-weight: bold;
         }
-
         .frases a:hover {
             text-decoration: underline;
             color: black;
@@ -69,7 +105,22 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 1rem;
-            margin: 20px 0; /* Espaçamento acima e abaixo do botão */
+            margin: 25px 0;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .back-button:hover {
+            background-color: rgb(140, 140, 140);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .back-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin: 1rem 0;
         }
         .fixa {
             position: fixed;
@@ -77,49 +128,25 @@
             right: 10px;
             z-index: 1000;
         }
-        .back-button {
-            background-color: rgb(160, 160, 160);
-            color: black;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin: 25px 0; /* Espaçamento acima e abaixo do botão */
-            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Adiciona transições suaves */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
-        }
-        .back-button:hover {
-            background-color: rgb(140, 140, 140); /* Muda a cor de fundo ao passar o mouse */
-            transform: translateY(-2px); /* Eleva ligeiramente o botão ao passar o mouse */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
-        }
-
-        .back-button:active {
-            transform: translateY(0); /* Reseta a elevação ao clicar */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reseta a sombra ao clicar */
-        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Frases</h1>
-        <span id="burger" class="material-symbols-outlined" onclick="clickMenu()">
+        <span id="burger" class="material-symbols-outlined" onclick="toggleMenu()">
             menu
         </span>
         <span id="menu">
-            <menu id="itens">
-                <ul type="none">
-                    <span id="close" class="material-symbols-outlined" onclick="clickMenu()">
-                        close
-                    </span>
-                    <li><a href="../LivrosPaginas/livros.html">Livros</a></li>
-                    <li><a href="../PoemasPaginas/poemas.html">Poemas</a></li>
-                    <li><a href="../FrasesPaginas/frases.html">Frases</a></li>
-                </ul>
-            </menu>
+            <span id="close" class="material-symbols-outlined" onclick="toggleMenu()">
+                close
+            </span>
+            <ul>
+                <li><a href="../LivrosPaginas/livros.html">Livros</a></li>
+                <li><a href="../PoemasPaginas/poemas.html">Poemas</a></li>
+                <li><a href="../FrasesPaginas/frases.html">Frases</a></li>
+            </ul>
         </span>
     </header>
+    <h1>Frases</h1>
     <main>
         <div class="frases">
             <p>"O que sabemos é uma gota; o que ignoramos é um oceano." - Isaac Newton</p>
@@ -139,44 +166,47 @@
         </div>
         <div class="frases">
             <p>"A vida não é um problema a ser resolvido, mas uma realidade a ser experimentada." - Soren Kierkegaard</p>
-            <a href="./kierkegaard.html">Mais frases e infomações sobre Kierkegaard</a>
+            <a href="./kierkegaard.html">Mais frases e informações sobre Kierkegaard</a>
         </div>
         <div class="frases">
             <p>"A verdade não é algo que se descobre, mas algo que se produz." - Michel Foucault</p>
-            <a href="./foucault.html">Mais frases e infomações sobre Michel Foucault</a>
+            <a href="./foucault.html">Mais frases e informações sobre Michel Foucault</a>
         </div>
         <div class="frases">
             <p>"As fronteiras da minha linguagem são as fronteiras do meu mundo." - Ludwig Wittgenstein</p>
-            <a href="./wittgenstein.html">Mais frases e infomações sobre Ludwig Wittgenstein</a>
+            <a href="./wittgenstein.html">Mais frases e informações sobre Ludwig Wittgenstein</a>
         </div>
         <div class="frases">
             <p>"A atenção é a forma mais pura da generosidade que podemos dar a outro ser." - Simone Weil</p>
-            <a href="./weil.html">Mais frases e infomações sobre Simone Weil</a>
+            <a href="./weil.html">Mais frases e informações sobre Simone Weil</a>
         </div>
         <div class="frases">
             <p>"Nada existe sem uma razão." - Gottfried Wilhelm Leibniz</p>
-            <a href="./leibniz.html">Mais frases e infomações sobre Gottfried Wilhelm Leibniz</a>
+            <a href="./leibniz.html">Mais frases e informações sobre Gottfried Wilhelm Leibniz</a>
         </div>
         <div class="frases">
             <p>"O que posso saber?" - Immanuel Kant</p>
-            <a href="./immanuel.html">Mais frases e infomações sobre Immanuel Kant</a>
+            <a href="./immanuel.html">Mais frases e informações sobre Immanuel Kant</a>
         </div>
     </main>
     <div class="fixa">
         <button class="back-button" onclick="goBack()">Voltar</button>
     </div>
     <script>
-        function clickMenu() {
-            if (itens.style.display == 'block') {
-                itens.style.display = 'none'
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const burger = document.getElementById('burger');
+            if (menu.style.left === '0px') {
+                menu.style.left = '-250px';
+                burger.style.display = 'block';
             } else {
-                    itens.style.display = 'block'
+                menu.style.left = '0px';
+                burger.style.display = 'none';
             }
         }
-
         function goBack() {
             window.history.back();
         }
-    </script> 
+    </script>
 </body>
 </html>
